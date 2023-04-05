@@ -1,8 +1,9 @@
 import grid from 'gridfs-stream';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv'
+dotenv.config({path:'../config.env'});
 
-
-const BaseUrl='http://localhost:5000';
+const BaseUrl=  process.env.BaseUrl ||'http://localhost:5001';
 
 // check if our db connected or not
 const isConnected= mongoose.connection;

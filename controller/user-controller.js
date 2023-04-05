@@ -11,6 +11,7 @@ export const signupUser = async (request, response) => {
         const salt = await bcrypt.genSalt();
         //generate hashed pass word which we store in our db
         let user = request.body;
+        // we can generate salt in hash by passing third params in bcrypt.hash(user.password, 10) like this;
         const hashedPass = await bcrypt.hash(user.password, salt);
         user = { name: user.name, email: user.email, password: hashedPass };
         let newUser = new userModel(user);
