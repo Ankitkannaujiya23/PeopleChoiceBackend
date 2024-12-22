@@ -7,7 +7,9 @@ const dbConnection = async () => {
     let password = process.env.PASSWORD;
     let userName = process.env.USER;
     // let URL=`mongodb+srv://${userName}:${password}@people-choice.tfocdef.mongodb.net/?retryWrites=true&w=majority`;
-    const URL = "mongodb://localhost:27017/people-choice";
+    const URL =
+      process.env.MONGO_URI || "mongodb://localhost:27017/people-choice";
+    console.log({ URL });
     mongoose.set("strictQuery", false);
     mongoose
       .connect(URL, { useNewURLParser: true })
