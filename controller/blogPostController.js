@@ -34,6 +34,7 @@ export const fetchAllPost = async (request, response) => {
 // for getting single post.
 export const fetchSinglePost = async (request, response) => {
     try {
+        console.log("path", request.params)
         let post = await BlogPostModel.findById({ _id: request.params.id });
 
         return response.status(200).json({ statusCode: 200, message: 'success', data: post });
