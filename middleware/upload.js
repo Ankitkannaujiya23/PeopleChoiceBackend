@@ -5,7 +5,7 @@ dotenv.config();
 let userName = process.env.USER;
 let password = process.env.PASSWORD;
 // const URL=`mongodb+srv://${userName}:${password}@people-choice.tfocdef.mongodb.net/?retryWrites=true&w=majority`;
-const URL = process.env.MONGO_URI || "mongodb://localhost:27017/people-choice";
+const URL = process.env.BASE_URL || "mongodb://localhost:27017/people-choice";
 const storage = new GridFsStorage({
   url: URL,
   options: { useNewURLParser: true },

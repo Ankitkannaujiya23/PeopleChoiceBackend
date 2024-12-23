@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config({ path: "./config.env" });
 
-const BaseUrl = process.env.MONGO_URI || "http://localhost:5001";
+const BaseUrl = process.env.BASE_URL || "http://localhost:5001";
+
 // check if our db connected or not
 const isConnected = mongoose.connection;
 let gridfsBucket;
